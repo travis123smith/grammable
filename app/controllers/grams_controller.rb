@@ -8,6 +8,7 @@ end
   def index
 
   end
+
 def create
   @gram = current_user.grams.create(gram_params)
   redirect_to root_path
