@@ -1,5 +1,6 @@
 class GramsController < ApplicationController
- 
+before_action :authenticate_user!, only: [:new, :create] 
+
 def new
   @gram = Gram.new
 end
@@ -8,7 +9,7 @@ end
 
   end
 def create
-  Gram.create(gram_params)
+  @gram = current_user.grams.create(gram_params)
   redirect_to root_path
 end
 
