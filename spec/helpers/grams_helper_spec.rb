@@ -1,5 +1,11 @@
 require 'rails_helper'
 
+
+RSpec.configure do |config|
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
+end
+
 # Specs in this file have access to a helper object that includes
 # the GramsHelper. For example:
 #
